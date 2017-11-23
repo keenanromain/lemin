@@ -5,13 +5,15 @@
 # include <stdio.h>
 # include <stdbool.h>
 
-# define START "##start"
-# define END "##end"
-# define ERR_0 "Failed to Allocate Memory with Malloc"
-# define ERR_1 ""
-# define ERR_2 ""
-# define ERR_3 ""
-# define ERR_4 ""
+# define START  "##start"
+# define END    "##end"
+# define ERR_0  "Failed to Allocate Memory with Malloc"
+# define ERR_1  ""
+# define ERR_2  ""
+# define ERR_3  ""
+# define ERR_4  ""
+# define ERR_5  ""
+# define ERR_6  ""
 
 typedef struct  s_path t_path;
 typedef struct  s_env t_env;
@@ -33,6 +35,8 @@ struct s_env
   t_env   *next;
 }
 
+char            *following_attr;
+static int      g_max_depth;
 int             g_ant_index;
 t_path          *g_full_path;
 
