@@ -1,3 +1,5 @@
+#include "lemin.h"
+
 int   ft_strcnum(char *s, char c)
 {
   int count;

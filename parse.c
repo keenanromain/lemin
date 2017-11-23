@@ -1,3 +1,5 @@
+#include "lemin.h"
+
 void parse_room(char *s)
 {
   t_path path;

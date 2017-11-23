@@ -1,3 +1,5 @@
+#include "lemin.h"
+
 void push_path_top(t_path **head, t_path *copy)
 {
   t_path *new;
