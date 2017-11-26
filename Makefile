@@ -46,7 +46,7 @@ $(NAME):
 	@echo "            MJP     ('    ('       ')         "
 	@echo "						   \033[0m "
 	make -C	libft/ fclean && make -C libft/
-	gcc $(FLAGS) $(NAME) $(SRC) libft/libft.a
+	gcc $(FLAGS) $(NAME) $(SRC) -g libft/libft.a
 	@echo "                              "
 	@echo "\033[01;39mFinished making lemin. Available Makefile commands:\033[0m"
 	@echo "\033[01;39m - make\033[0m"

@@ -7,13 +7,13 @@
 
 # define START  "##start"
 # define END    "##end"
-# define ERR_0  "Failed to Allocate Memory with Malloc"
-# define ERR_1  "Parsing Failure"
-# define ERR_2  "No starting or no ending position"
-# define ERR_3  "Did not recieve ants"
-# define ERR_4  "Pipe Error"
-# define ERR_5  "Incorrect number of rooms/links"
-# define ERR_6  "Invalid path"
+# define ERR_0  "Failed to Allocate Memory with Malloc\n"
+# define ERR_1  "Parsing Failure\n"
+# define ERR_2  "No starting or no ending position\n"
+# define ERR_3  "Did not recieve ants\n"
+# define ERR_4  "Pipe Error\n"
+# define ERR_5  "Incorrect number of rooms/links\n"
+# define ERR_6  "Invalid path\n"
 
 typedef struct  s_path t_path;
 typedef struct  s_env t_env;

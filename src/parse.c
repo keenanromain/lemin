@@ -29,9 +29,9 @@ void parse_pipe(char *s)
   right = find_name_in_path(g_full_path, tab[1]);
   if (!left || !right)
     error_event(4);
-  push_env_top(&left->adjacent, left);
-  push_env_top(&right->adjacent, right);
-  ft_printf("%s-%s", s[0], s[1]);
+  push_env_top(&left->adjacent, right);
+  push_env_top(&right->adjacent, left);
+  ft_printf("%s-%s\n", left->name, right->name);
 }
 
 char  *read_line(int fd, char *tmp) //see about just using get next line

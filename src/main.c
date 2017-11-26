@@ -29,8 +29,9 @@ int   main(void)
 
   if (!parse_into_globals(NULL))
     error_event(1); //error_event(0) is for malloc
-  if (!(first_pos = find_attr_in_path(g_full_path, START)) \
-  || !(last_pos = find_attr_in_path(g_full_path, END)))
+  first_pos = find_attr_in_path(g_full_path, START);
+  last_pos = find_attr_in_path(g_full_path, END);
+  if (!first_pos || !last_pos)
     error_event(2);
   determine_path(last_pos, (last_pos->len = 0));
   i = 0;
