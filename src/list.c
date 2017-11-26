@@ -1,4 +1,4 @@
-#include "lemin.h"
+#include "../inc/lemin.h"
 
 void push_path_top(t_path **head, t_path *copy)
 {
@@ -15,8 +15,8 @@ void push_env_top(t_env **head, t_path *copy)
   t_env *new;
 
   new = (t_env *)malloc(sizeof(t_env));
-  new->path = copy
-  new->next = *head
+  new->details = copy;
+  new->next = *head;
   *head = new;
 }
 
@@ -29,7 +29,7 @@ t_path *find_name_in_path(t_path *path, char *desired)
         return (path);
     path = path->next;
   }
-  return ((void *)0)
+  return ((void *)0);
 }
 
 t_path *find_attr_in_path(t_path *path, char *desired)
@@ -41,5 +41,5 @@ t_path *find_attr_in_path(t_path *path, char *desired)
         return (path);
     path = path->next;
   }
-  return ((void *)0)
+  return ((void *)0);
 }

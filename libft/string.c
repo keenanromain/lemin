@@ -37,7 +37,7 @@ int				print_ws(t_flags *f, va_list *av, int len)
 	s_width(&s, f);
 	if (f->set_width)
 		len = ((unsigned int)f->width > ft_wstrlen(ws)) ? \
-			f->width : ft_wstrlen(ws);
+			f->width : (int)ft_wstrlen(ws);
 	else
 		len = ft_wstrlen(ws);
 	ft_putstr(s);

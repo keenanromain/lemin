@@ -1,4 +1,4 @@
-#include "lemin.h"
+#include "../inc/lemin.h"
 
 void error_event(int errno)
 {
@@ -17,10 +17,9 @@ void error_event(int errno)
   exit(-1);
 }
 
-g_following_attr = 0;
-g_ant_index = 0;
-g_max_depth = 0;
-g_full_path = 0;
+char *g_following_attr = 0;
+int g_ant_index = 0;
+t_path *g_full_path = 0;
 
 int   main(void)
 {
@@ -37,7 +36,7 @@ int   main(void)
   i = 0;
   if (g_ant_index) //might be able to discard this check based on return from parser
     while (g_ant_index--) //it assumes both globals are required which I'm not certain on
-      traverse_path(first_pos, last_pos, i++)
+      traverse_path(first_pos, last_pos, i++);
   else //might be able to discard this check based on return from parser
     error_event(3);
   return (0);

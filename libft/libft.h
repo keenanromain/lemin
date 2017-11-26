@@ -89,6 +89,7 @@ void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f) (t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f) (t_list *elem));
 char				*ft_strndup(const char *s, size_t n);
+int                 ft_strcnum(char *s, char c);
 long				ft_atol(const char *str);
 int					ft_strclen(const char *s, char c);
 int					ft_lstsize(t_list *lst);

@@ -1,8 +1,10 @@
-#include "lemin.h"
+#include "../inc/lemin.h"
+
+static int      g_max_depth = 0;
 
 void determine_path(t_path *path, int size)
 {
-  t_env *tmp;
+  t_env *env;
   t_path *each;
 
   if (!path)
@@ -16,7 +18,7 @@ void determine_path(t_path *path, int size)
       if (g_max_depth < size + 1)
         g_max_depth = size + 1;
       each->len = size + 1;
-      determine_path(each, each->len)
+      determine_path(each, each->len);
     }
     env = env->next;
   }
@@ -36,7 +38,7 @@ t_path  *closest_adjacent(t_path *path)
         best = env->details;
     env = env->next;
   }
-  return (best)
+  return (best);
 }
 
 void traverse_path(t_path *first, t_path *end, int i)
@@ -50,7 +52,7 @@ void traverse_path(t_path *first, t_path *end, int i)
     if (check > g_max_depth)
       error_event(5);
     if (!(tmp = closest_adjacent(first)))
-      error_event(6)
+      error_event(6);
     ft_printf("L%d-%s\n", i, tmp->name);
     check++;
     first = first->next;

@@ -74,6 +74,7 @@ SRCS = \
 		ft_lstnew.c			\
 		ft_lstmap.c			\
 		ft_strndup.c		\
+		ft_strcnum.c		\
 		ft_atol.c			\
 		ft_strclen.c		\
 		ft_lstsize.c		\
