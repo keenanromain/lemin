@@ -28,17 +28,14 @@ int   main(void)
   int     i;
 
   if (!parse_into_globals(NULL))
-    error_event(1); //error_event(0) is for malloc
+    error_event(3); //error_event(0) is for malloc
   first_pos = find_attr_in_path(g_full_path, START);
   last_pos = find_attr_in_path(g_full_path, END);
   if (!first_pos || !last_pos)
     error_event(2);
   determine_path(last_pos, (last_pos->len = 0));
   i = 0;
-  if (g_ant_index) //might be able to discard this check based on return from parser
-    while (g_ant_index--) //it assumes both globals are required which I'm not certain on
-      traverse_path(first_pos, last_pos, i++);
-  else //might be able to discard this check based on return from parser
-    error_event(3);
+  while (g_ant_index--) //it assumes both globals are required which I'm not certain on
+	traverse_path(first_pos, last_pos, i++);
   return (0);
 }

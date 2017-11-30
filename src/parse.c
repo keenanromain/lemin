@@ -33,7 +33,7 @@ void parse_pipe(char *s)
   push_env_top(&right->adjacent, left);
   ft_printf("%s-%s\n", left->name, right->name);
 }
-
+/*
 char  *read_line(int fd, char *tmp) //see about just using get next line
 {
   char *line;
@@ -46,7 +46,10 @@ char  *read_line(int fd, char *tmp) //see about just using get next line
   while(buffer[0] != '\n')
   {
     if ((r = read(fd, buffer, 1)) <= 0)
-      error_event(1); //reading error
+	{
+		ft_printf("look at me\n");
+		error_event(1); //reading error
+	}
     tmp = ft_strjoin(line, buffer);
     ft_strdel(&line);
     line = tmp;
@@ -54,11 +57,12 @@ char  *read_line(int fd, char *tmp) //see about just using get next line
   *ft_strchr(line, '\n') = 0;
   return (line);
 }
-
+*/
 int   parse_into_globals(char *line)
 {
-    while ((line = read_line(STDIN_FILENO, NULL))
-    && ft_strlen(line))
+    //while ((line = read_line(STDIN_FILENO, NULL))
+   // && ft_strlen(line))
+    while ((get_next_line(STDIN_FILENO, &line)))
     {
       if (line[0] == '#')
       {
@@ -77,5 +81,5 @@ int   parse_into_globals(char *line)
       }
       ft_strdel(&line);
     }
-    return (g_ant_index && g_following_attr);
+    return (g_ant_index); // can perform a check here on g_ant_index
 }
